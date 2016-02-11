@@ -1,0 +1,32 @@
+name: jarkup
+version: 0.1.0
+modes:
+  base:
+    cond:
+      - name: header1
+        regexp: ^■(.*)$
+        to: header1
+      - name: header2
+        regexp: ^●(.*)$
+        to: header2
+      - name: header3
+        regexp: ^○(.*)$
+        to: header2
+      - name: blank
+        regexp: ^\s*$
+        ignore: 1
+      - name: paragraph
+        to: paragraph
+  exitWithBlankLine:
+    cond:
+      - name: exit
+        regexp: ^\s*$
+  paragraph:
+    extends: base exitWithBlankLine
+  headers1:
+    extends: base exitWithBlankLine
+  headers2:
+    extends: base exitWithBlankLine
+  headers3:
+    extends: base exitWithBlankLine
+  
