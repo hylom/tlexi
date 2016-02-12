@@ -19,5 +19,8 @@
     "url": ""
   },
   "homepage": "https://github.com/hylom/tlexi/",
-  "dependencies": {}
+  "dependencies": {
+    "js-yaml": "3.5.3",
+    "commander": "2.9.0"
+  }
 }
