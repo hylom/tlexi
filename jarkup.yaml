@@ -1,6 +1,6 @@
 name: jarkup
 version: 0.1.0
-initialMode: base
+initialMode: root
 modes:
   root:
     cond:
@@ -25,6 +25,20 @@ modes:
         regexp: ^\s*$
   singleLine:
     singleLine: 1
+  inlineBase:
+    cond:
+      anchor1:
+        regexp: '\*\[([^\]]*)\]'
+        name: anchor
+        property: 
+          href: $1
+        value: $1
+      anchor2:
+        regexp: '\*\[([^ ]*) ([^\]]*)\]'
+        name: anchor
+        property:
+          href: $1
+        value: $2
   paragraph:
     extends: [exitWithBlankLine]
   header1:
