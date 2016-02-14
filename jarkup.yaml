@@ -2,7 +2,7 @@ name: jarkup
 version: 0.1.0
 initialMode: base
 modes:
-  base:
+  root:
     cond:
       header1:
         regexp: ^■(.*)$
@@ -13,22 +13,24 @@ modes:
       header3:
         regexp: ^○(.*)$
         to: header2
-      blank:
-        regexp: ^\s*$
-        ignore: 1
       paragraph:
         regexp: ^　
         to: paragraph
+      blank:
+        regexp: ^\s*$
+        ignore: 1
   exitWithBlankLine:
     cond:
       exit:
         regexp: ^\s*$
+  singleLine:
+    singleLine: 1
   paragraph:
-    extends: [base, exitWithBlankLine]
+    extends: [exitWithBlankLine]
   header1:
-    extends: [base, exitWithBlankLine]
+    extends: [singleLine]
   header2:
-    extends: [base, exitWithBlankLine]
+    extends: [singleLine]
   header3:
-    extends: [base, exitWithBlankLine]
+    extends: [singleLine]
   
