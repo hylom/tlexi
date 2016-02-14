@@ -29,16 +29,18 @@ modes:
     cond:
       anchor1:
         regexp: '\*\[([^\]]*)\]'
-        name: anchor
-        property: 
-          href: $1
-        value: $1
+        element: 
+          name: anchor
+          property: 
+            href: $1
+          value: $1
       anchor2:
         regexp: '\*\[([^ ]*) ([^\]]*)\]'
-        name: anchor
-        property:
-          href: $1
-        value: $2
+        element:
+          name: anchor
+          property:
+            href: $1
+          value: $2
   paragraph:
     extends: [exitWithBlankLine]
   header1:
