@@ -26,23 +26,21 @@ modes:
   singleLine:
     singleLine: 1
   inlineBase:
-    cond:
+    subMode:
       anchor1:
-        regexp: '\*\[([^\]]*)\]'
-        element: 
-          name: anchor
-          property: 
-            href: $1
-          value: $1
+        regexp: '\*\[([^\] ]*)\]'
+        name: anchor
+        property: 
+          href: $1
       anchor2:
         regexp: '\*\[([^ ]*) ([^\]]*)\]'
-        element:
-          name: anchor
-          property:
-            href: $1
-          value: $2
+        name: anchor
+        property:
+          href: $1
+        value: $2
+
   paragraph:
-    extends: [exitWithBlankLine]
+    extends: [exitWithBlankLine, inlineBase]
   header1:
     extends: [singleLine]
   header2:
