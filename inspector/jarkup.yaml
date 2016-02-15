@@ -29,6 +29,15 @@ modes:
   orderdList:
     regexp: ^[0-9]+.\s*(.*)$
     extends: [exitWithBlankLine, inlineBase]
+  list:
+    regexp: ^☆+---
+    exit: ^☆+---
+  html:
+    regexp: ^<
+    extends: [singleLine]
+  raw:
+    regexp: ^{{{$
+    exit: ^}}}$
   subModes:
   anchor1:
     regexp: '\*\[([^\] ]*)\]'
