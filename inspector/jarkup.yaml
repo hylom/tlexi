@@ -23,7 +23,13 @@ modes:
   header3:
     regexp: ^○(.*)$
     extends: [singleLine]
-subModes:
+  unorderdList:
+    regexp: ^・(.*)$
+    extends: [exitWithBlankLine, inlineBase]
+  orderdList:
+    regexp: ^[0-9]+.\s*(.*)$
+    extends: [exitWithBlankLine, inlineBase]
+  subModes:
   anchor1:
     regexp: '\*\[([^\] ]*)\]'
     name: anchor
