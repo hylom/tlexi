@@ -1,0 +1,5 @@
+elements:
+  paragraph: <p>$value</p>
+  header1: <h1>$value</h1>
+  header2: <h2>$value</h2>
+  header3: <h3>$value</h3>
