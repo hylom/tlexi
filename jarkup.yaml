@@ -2,49 +2,37 @@ name: jarkup
 version: 0.1.0
 initialMode: root
 modes:
-  root:
-    cond:
-      header1:
-        regexp: ^■(.*)$
-        to: header1
-      header2:
-        regexp: ^●(.*)$
-        to: header2
-      header3:
-        regexp: ^○(.*)$
-        to: header2
-      paragraph:
-        regexp: ^　
-        to: paragraph
-      blank:
-        regexp: ^\s*$
-        ignore: 1
-  exitWithBlankLine:
-    cond:
-      exit:
-        regexp: ^\s*$
+  root: {}
   singleLine:
     singleLine: 1
+  exitWithBlankLine:
+    exit: ^\s*$
   inlineBase:
-    subMode:
-      anchor1:
-        regexp: '\*\[([^\] ]*)\]'
-        name: anchor
-        property: 
-          href: $1
-      anchor2:
-        regexp: '\*\[([^ ]*) ([^\]]*)\]'
-        name: anchor
-        property:
-          href: $1
-        value: $2
-
+    subModes:
+      - anchor1
+      - anchor2
   paragraph:
+    regexp: ^　
     extends: [exitWithBlankLine, inlineBase]
   header1:
+    regexp: ^■(.*)$
     extends: [singleLine]
   header2:
+    regexp: ^●(.*)$
     extends: [singleLine]
   header3:
+    regexp: ^○(.*)$
     extends: [singleLine]
-  
+subModes:
+  anchor1:
+    regexp: '\*\[([^\] ]*)\]'
+    name: anchor
+    property: 
+      href: $1
+  anchor2:
+    regexp: '\*\[([^ ]*) ([^\]]*)\]'
+    name: anchor
+    property:
+      href: $1
+    value: $2
+
