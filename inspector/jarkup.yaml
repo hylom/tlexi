@@ -30,15 +30,15 @@ modes:
     regexp: ^[0-9]+.\s*(.*)$
     extends: [exitWithBlankLine, inlineBase]
   list:
-    regexp: ^☆+---
-    exit: ^☆+---
+    regexp: ^☆\+---
+    exit: ^☆\+---
   html:
     regexp: ^<
     extends: [singleLine]
   raw:
     regexp: ^{{{$
     exit: ^}}}$
-  subModes:
+subModes:
   anchor1:
     regexp: '\*\[([^\] ]*)\]'
     name: anchor
