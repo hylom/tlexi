@@ -4,6 +4,7 @@ var tlexi = require('./lib/tlexi');
 var tlexc = require('./lib/tlexc');
 var commander = require('commander');
 var fs = require('fs');
+var util = require('util');
 
 commander.version('0.0.1')
   .option('-i, --inspector <file>', 'inspector file')
@@ -37,7 +38,7 @@ function main() {
     var c = tlexc.load(commander.converter);
     t = c.parseTlex(t);
   }
-  console.log(t);
+  console.log(util.inspect(t, {depth:10}));
 }
 
 main();
