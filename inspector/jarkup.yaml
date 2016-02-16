@@ -24,13 +24,13 @@ modes:
     regexp: ^○(.*)$
     extends: [singleLine]
   unorderdList:
-    regexp: ^・(.*)$
+    regexp: ^・.*$
     extends: [exitWithBlankLine, inlineBase]
   orderdList:
-    regexp: ^[0-9]+.\s*(.*)$
+    regexp: ^[0-9]+.\s*.*$
     extends: [exitWithBlankLine, inlineBase]
   list:
-    regexp: ^☆\+---
+    regexp: ^☆\+---(.*)$
     exit: ^☆\+---
   html:
     regexp: ^<
