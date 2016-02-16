@@ -31,14 +31,16 @@ function main() {
   var text = fs.readFileSync(commander.filename, 'utf8');
   var ret;
   var t = i.parseText(text);
-
-  //console.log(t);
+  
+  console.log(util.inspect(t, {depth:10}));
 
   if (commander.converter) {
     var c = tlexc.load(commander.converter);
     t = c.parseTlex(t);
+    console.log(t);
+  } else {
+    console.log(util.inspect(t, {depth:10}));
   }
-  console.log(util.inspect(t, {depth:10}));
 }
 
 main();
