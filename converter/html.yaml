@@ -1,10 +1,10 @@
 elements:
-  paragraph: <p>$value</p>
-  header1: <h1>$value</h1>
-  header2: <h2>$value</h2>
-  header3: <h3>$value</h3>
-  html: $value
-  list: <pre>$value</pre>
-  anchor: <a href="">$value</a>
-  unorderdList: <ul>$value</ul>
-  orderdList: <ol>$value</ol>
+  paragraph: <p>$1</p>
+  header1: <h1>$1</h1>
+  header2: <h2>$1</h2>
+  header3: <h3>$1</h3>
+  html: <div class="html">$1</div>
+  list: <pre>$1</pre>
+  anchor: <a href="$href">$1</a>
+  unorderdList: <ul>$1</ul>
+  orderdList: <ol>$1</ol>
