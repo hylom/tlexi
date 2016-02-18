@@ -8,3 +8,4 @@ elements:
   anchor: <a href="$href">$1</a>
   unorderdList: <ul>$1</ul>
   orderdList: <ol>$1</ol>
+  listItem: <li>$1</li>

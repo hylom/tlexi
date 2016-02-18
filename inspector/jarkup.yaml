@@ -26,9 +26,15 @@ modes:
   unorderdList:
     regexp: ^・.*$
     extends: [exitWithBlankLine, inlineBase]
+    subModes:
+      listItem:
+        regexp: ^・(.*)$
   orderdList:
     regexp: ^[0-9]+.\s*.*$
     extends: [exitWithBlankLine, inlineBase]
+    subModes:
+      listItem:
+        regexp: ^[0-9]+.\s*(.*)$
   list:
     regexp: ^☆\+---(.*)$
     exit: ^☆\+---
