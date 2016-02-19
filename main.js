@@ -5,6 +5,7 @@ var tlexc = require('./lib/tlexc');
 var commander = require('commander');
 var fs = require('fs');
 var util = require('util');
+var debug = require('./lib/debug');
 
 commander.version('0.0.1')
   .option('-i, --inspector <file>', 'inspector file')
@@ -32,7 +33,8 @@ function main() {
   var ret;
   var t = i.parseText(text);
   
-  console.log(util.inspect(t, {depth:10}));
+  //debug.debug(util.inspect(t, {depth:0}));
+  debug.debug(t);
 
   if (commander.converter) {
     var c = tlexc.load(commander.converter);
