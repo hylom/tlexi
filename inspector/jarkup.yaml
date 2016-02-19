@@ -12,7 +12,7 @@ modes:
       - anchor1
       - anchor2
   paragraph:
-    regexp: ^　
+    regexp: ^(　.*)$
     extends: [exitWithBlankLine, inlineBase]
   header1:
     regexp: ^■(.*)$
@@ -24,22 +24,23 @@ modes:
     regexp: ^○(.*)$
     extends: [singleLine]
   unorderdList:
-    regexp: ^・.*$
+    regexp: ^(・.*)$
     extends: [exitWithBlankLine, inlineBase]
     subModes:
       listItem:
         regexp: ^・(.*)$
   orderdList:
-    regexp: ^[0-9]+.\s*.*$
+    regexp: ^([0-9]+.\s*.*)$
     extends: [exitWithBlankLine, inlineBase]
     subModes:
       listItem:
         regexp: ^[0-9]+.\s*(.*)$
   list:
-    regexp: ^☆\+---(.*)$
+    regexp: ^☆\+---
+    filter: "$1\n"
     exit: ^☆\+---
   html:
-    regexp: ^<
+    regexp: ^(<.*)
     extends: [singleLine]
   raw:
     regexp: ^{{{$
