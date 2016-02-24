@@ -1,15 +1,14 @@
 // tlexi.js
 
-var tlexi = require('./lib/tlexi');
-var tlexc = require('./lib/tlexc');
+var tlexi = require('./index');
 var commander = require('commander');
 var fs = require('fs');
 var util = require('util');
 var debug = require('./lib/debug');
 
-commander.version('0.0.1')
-  .option('-i, --inspector <file>', 'inspector file')
-  .option('-c, --converter <file>', 'converter file')
+commander.version('0.1.1')
+  .option('-i, --inspector <inspector>', 'inspector name')
+  .option('-c, --converter <converter>', 'converter name')
   .arguments('<filename>')
   .action( function (filename) {
     commander.filename = filename;
@@ -28,21 +27,9 @@ if (!commander.filename) {
 }
 
 function main() {
-  var i = tlexi.load(commander.inspector);
   var text = fs.readFileSync(commander.filename, 'utf8');
-  var ret;
-  var t = i.parseText(text);
-  
-  //debug.debug(util.inspect(t, {depth:0}));
-  debug.debug(t);
-
-  if (commander.converter) {
-    var c = tlexc.load(commander.converter);
-    t = c.parseTlex(t);
-    console.log(t);
-  } else {
-    console.log(util.inspect(t, {depth:10}));
-  }
+  var ret = tlexi.parse(text, commander.inspector, commander.converter);
+  console.log(ret);
 }
 
 main();
