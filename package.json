@@ -11,12 +11,14 @@
     "url": "https://github.com/hylom/tlexi/"
   },
   "keywords": [
-    "text"
+    "text",
+    "markup"
   ],
   "author": "hylom",
   "license": "GPL-3.0",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/hylom/tlexi/isssues",
+    "email": "hylom@users.sourceforge.jp"
   },
   "homepage": "https://github.com/hylom/tlexi/",
   "dependencies": {
