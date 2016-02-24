@@ -1,8 +1,8 @@
 {
   "name": "tlexi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Text lexical inspecter and converter",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "start": "node main.js"
   },
