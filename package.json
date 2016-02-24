@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node main.js"
   },
+  "engines": {
+    "node": ">=0.10.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/hylom/tlexi/"
@@ -22,7 +25,7 @@
   },
   "homepage": "https://github.com/hylom/tlexi/",
   "dependencies": {
-    "js-yaml": "3.5.3",
-    "commander": "2.9.0"
+    "js-yaml": ">=3.5.3",
+    "commander": ">=2.9.0"
   }
 }
