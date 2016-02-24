@@ -6,7 +6,7 @@ var fs = require('fs');
 var util = require('util');
 var debug = require('./lib/debug');
 
-commander.version('0.1.1')
+commander.version('0.1.3')
   .option('-i, --inspector <inspector>', 'inspector name')
   .option('-c, --converter <converter>', 'converter name')
   .arguments('<filename>')
