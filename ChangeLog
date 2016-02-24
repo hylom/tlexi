@@ -1,5 +1,10 @@
 2016-02-25  hylom  <hylom@users.sourceforge.jp>
 
+	* bump to version 0.1.2
+	* fix invalid package.json file
+
+2016-02-25  hylom  <hylom@users.sourceforge.jp>
+
 	* bump to version 0.1.1
 	* add index.js for use as module
 
