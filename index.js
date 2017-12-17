@@ -11,11 +11,15 @@ function parse(text, inspector, converter) {
   if (typeof inspector === 'string') {
     if (inspector === 'jarkup') {
       var i = tlexi.load(path.join(base_dir, 'inspector/jarkup.yaml'));
-    }
+    } else {
+      var i = tlexi.load(inspector);
+    }  
   }
   if (typeof converter === 'string') {
     if (converter === 'html') {
       var c = tlexc.load(path.join(base_dir, 'converter/html.yaml'));
+    } else {
+      var c = tlexc.load(converter);
     }
   }
   
