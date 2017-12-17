@@ -1,5 +1,5 @@
 2017-12-17  hylom  <hylom@users.osdn.jp>
-	* bump to version 0.1.5
+	* bump to version 0.1.6
 	* fix to work multiple submodes
 	* main.js: add -t option
 	* main.js: -c and -i option can take inspector/conveter yaml file
